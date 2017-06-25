@@ -37,7 +37,7 @@
      <ul>
        <li ng-repeat="item in toBuy.items">Buy {{item.quantity}} {{item.name}} <button class="btn btn-default" ng-click="toBuy.buyItem($index)"><span class="glyphicon glyphicon-ok"></span> Bought</button></li>
      </ul>
-     <div class="emptyMessage">Everything is bought!</div>
+     <div ng-if="!toBuy.items.length" class="emptyMessage">Everything is bought!</div>
     </div>
 
     <!-- Already Bought List -->
@@ -46,7 +46,7 @@
      <ul>
        <li ng-repeat="item in alreadyBought.items">Bought {{item.quantity}} {{item.name}}</li>
      </ul>
-     <div class="emptyMessage">Nothing bought yet.</div>
+     <div ng-if="!alreadyBought.items.length" class="emptyMessage">Nothing bought yet.</div>
     </div>
   </div>
 </div>
